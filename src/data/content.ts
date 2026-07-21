@@ -5,7 +5,7 @@ export const BRAND = {
   enterpriseEmail: "enterprise@goai.solutions",
   linkedin: "https://www.linkedin.com/company/goai-solutions/",
   twitter: "https://x.com/goAISolutions",
-  locations: ["Tampa Metro, Florida", "Bangalore", "São Paulo", "Australia"],
+  locations: ["Tampa Metro, Florida", "Bengaluru", "São Paulo", "Australia"],
 } as const;
 
 export const NAV_ITEMS = [
@@ -176,20 +176,40 @@ export const PROJECTS = [
 
 export const FOUNDERS = [
   {
-    name: "Deepak N Belavadi",
-    role: "Founder",
+    name: "Deepak N. Belavadi",
+    role: "CESO",
     biography:
-      "Founder of goAI Solutions. Replacing large offshore teams with AI-augmented pods. Co-founder of LLMredi. Former Infosys and SecurAX (acquired by ADP). Driving the thesis that AI fundamentally reshapes enterprise software delivery.",
-    linkedin: "https://in.linkedin.com/in/deepaknbelavadi",
+      "Veteran technology leader with 25+ years of experience building and scaling enterprise software businesses. Passionate about helping organizations transform through AI-first engineering and execution.",
     initials: "DB",
   },
   {
-    name: "Vivian Dsouza",
-    role: "Engineering Leadership",
+    name: "Deepak I",
+    role: "CEO",
     biography:
-      "Building the future of software delivery with AI. AI-native engineering, backend systems, cloud infrastructure, and generative AI — architecting the technical foundation of APDM.",
-    linkedin: "https://in.linkedin.com/in/viv-dsouza",
+      "Entrepreneur and business leader driving goAI's vision of AI-native software delivery, enabling enterprises to build, scale, and innovate faster.",
+    initials: "DS",
+  },
+  {
+    name: "Parth Verma",
+    role: "VP, AI Architecture & Innovation",
+    biography:
+      "AI architect focused on designing enterprise-grade AI solutions, modern architectures, and intelligent systems that deliver measurable business outcomes.",
+    initials: "PV",
+  },
+  {
+    name: "Vivian D'Souza",
+    role: "AVP, Platform Engineering & DevOps",
+    biography:
+      "Platform engineering and DevOps leader with expertise in building secure, scalable, and cloud-native systems for enterprise applications.",
     initials: "VD",
+    linkedin: "https://in.linkedin.com/in/viv-dsouza",
+  },
+  {
+    name: "Sree Harshavardhana",
+    role: "AVP, Software Delivery",
+    biography:
+      "Software delivery leader experienced in managing high-performing engineering teams and delivering complex enterprise programs with speed and quality.",
+    initials: "SH",
   },
 ] as const;
 

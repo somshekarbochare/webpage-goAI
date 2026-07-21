@@ -3,7 +3,7 @@ import { ScrollReveal } from "../components/ScrollReveal";
 
 export function OriginStory() {
   return (
-    <section id="origin" className="px-6 py-28">
+    <section id="origin" className="section-padding">
       <div className="mx-auto max-w-4xl">
         <ScrollReveal>
           <p className="text-center text-sm font-semibold tracking-widest text-primary uppercase">
@@ -14,25 +14,27 @@ export function OriginStory() {
           </h2>
         </ScrollReveal>
 
-        <div className="relative mt-16">
-          <div className="absolute top-0 left-8 h-full w-0.5 bg-primary/20 md:left-1/2 md:-translate-x-px" />
+        <div className="relative mt-12">
+          <div className="absolute top-0 left-[1.375rem] h-full w-0.5 bg-primary/20 md:left-1/2 md:-translate-x-px" />
 
           {ORIGIN_TIMELINE.map((event, i) => (
             <ScrollReveal key={event.title} delay={i * 0.08}>
               <div
-                className={`relative mb-12 flex items-start gap-8 ${
+                className={`relative mb-9 flex items-center gap-6 md:mb-10 ${
                   i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
                 <div className="hidden flex-1 md:block" />
-                <div className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-lg font-bold text-white shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2">
+                <div className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-sm font-bold text-white shadow-md md:absolute md:left-1/2 md:-translate-x-1/2">
                   {i + 1}
                 </div>
-                <div className="flex-1 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:max-w-md">
+                <div className="flex-1 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm md:max-w-md dark:border-gray-700 dark:bg-gray-800">
                   <h3 className="font-heading text-lg font-bold text-secondary">
                     {event.title}
                   </h3>
-                  <p className="mt-2 text-gray-600">{event.description}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    {event.description}
+                  </p>
                 </div>
               </div>
             </ScrollReveal>

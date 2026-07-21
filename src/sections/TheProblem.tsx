@@ -20,7 +20,7 @@ const iconMap = {
 
 export function TheProblem() {
   return (
-    <section id="problem" className="bg-secondary px-6 py-28 text-white">
+    <section id="problem" className="section-padding bg-gray-900 text-white dark:bg-gray-950">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <p className="text-sm font-semibold tracking-widest text-accent uppercase">
@@ -38,7 +38,7 @@ export function TheProblem() {
           </p>
         </ScrollReveal>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PROBLEM_TOPICS.map((topic, i) => {
             const Icon = iconMap[topic.icon];
             return (

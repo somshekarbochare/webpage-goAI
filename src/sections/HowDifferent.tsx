@@ -3,7 +3,7 @@ import { ScrollReveal } from "../components/ScrollReveal";
 
 export function HowDifferent() {
   return (
-    <section id="different" className="px-6 py-28">
+    <section id="different" className="section-padding">
       <div className="mx-auto max-w-4xl">
         <ScrollReveal>
           <p className="text-center text-sm font-semibold tracking-widest text-primary uppercase">
@@ -15,8 +15,8 @@ export function HowDifferent() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
-          <div className="mt-16 overflow-hidden rounded-3xl border border-gray-200 shadow-sm">
-            <div className="grid grid-cols-2 bg-secondary text-white">
+          <div className="mt-12 overflow-hidden rounded-3xl border border-gray-200 shadow-sm dark:border-gray-700">
+            <div className="grid grid-cols-2 bg-gray-900 text-white dark:bg-gray-950">
               <div className="border-r border-white/10 px-6 py-5 text-center font-heading font-semibold">
                 Traditional Delivery
               </div>
@@ -28,10 +28,12 @@ export function HowDifferent() {
               <div
                 key={row.traditional}
                 className={`grid grid-cols-2 ${
-                  i % 2 === 0 ? "bg-white" : "bg-gray-50"
+                  i % 2 === 0
+                    ? "bg-white dark:bg-gray-800"
+                    : "bg-gray-50 dark:bg-gray-900"
                 }`}
               >
-                <div className="border-r border-gray-100 px-6 py-5 text-center text-gray-600">
+                <div className="border-r border-gray-100 px-6 py-5 text-center text-gray-600 dark:border-gray-700 dark:text-gray-300">
                   {row.traditional}
                 </div>
                 <div className="px-6 py-5 text-center font-semibold text-primary">

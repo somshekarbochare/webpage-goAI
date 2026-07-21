@@ -5,14 +5,14 @@ import { ScrollReveal } from "../components/ScrollReveal";
 const categoryColors: Record<string, string> = {
   APDM: "bg-primary/10 text-primary",
   AI: "bg-accent/10 text-primary",
-  "Enterprise Transformation": "bg-purple-100 text-purple-700",
-  Engineering: "bg-green-100 text-green-700",
-  "Product Development": "bg-orange-100 text-orange-700",
+  "Enterprise Transformation": "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300",
+  Engineering: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+  "Product Development": "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
 };
 
 export function Blogs() {
   return (
-    <section id="blogs" className="bg-gray-50 px-6 py-28">
+    <section id="blogs" className="section-padding bg-surface">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <p className="text-center text-sm font-semibold tracking-widest text-primary uppercase">
@@ -21,19 +21,19 @@ export function Blogs() {
           <h2 className="mt-4 text-center font-heading text-4xl font-bold text-secondary md:text-5xl">
             Thought leadership
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-600">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-300">
             Insights on APDM, AI, enterprise transformation, and the future of
             software delivery.
           </p>
         </ScrollReveal>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {BLOG_CATEGORIES.map((post, i) => (
             <ScrollReveal key={post.title} delay={i * 0.07} animation="scale">
-              <article className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 transition hover:shadow-md">
+              <article className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 transition hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
                 <span
                   className={`inline-block w-fit rounded-full px-3 py-1 text-xs font-semibold ${
-                    categoryColors[post.category] ?? "bg-gray-100 text-gray-700"
+                    categoryColors[post.category] ?? "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
                   }`}
                 >
                   {post.category}
@@ -41,7 +41,7 @@ export function Blogs() {
                 <h3 className="mt-4 font-heading text-lg font-bold text-secondary transition group-hover:text-primary">
                   {post.title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                   {post.excerpt}
                 </p>
                 <div className="mt-6 flex items-center justify-between">

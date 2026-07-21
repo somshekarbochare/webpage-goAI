@@ -15,7 +15,7 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section id="testimonials" className="px-6 py-28">
+    <section id="testimonials" className="section-padding">
       <div className="mx-auto max-w-4xl">
         <ScrollReveal>
           <p className="text-center text-sm font-semibold tracking-widest text-primary uppercase">
@@ -26,7 +26,7 @@ export function Testimonials() {
           </h2>
         </ScrollReveal>
 
-        <div className="relative mt-16 min-h-[280px]">
+        <div className="relative mt-12 min-h-[260px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
@@ -34,17 +34,17 @@ export function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.5 }}
-              className="rounded-3xl border border-gray-200 bg-white p-10 shadow-sm md:p-14"
+              className="rounded-3xl border border-gray-200 bg-white p-10 shadow-sm md:p-12 dark:border-gray-700 dark:bg-gray-800"
             >
               <Quote className="mb-6 text-primary/30" size={40} />
-              <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
+              <p className="text-xl leading-relaxed text-gray-700 md:text-2xl dark:text-gray-200">
                 {TRUST_SIGNALS[active].feedback}
               </p>
-              <div className="mt-8 border-t border-gray-100 pt-6">
+              <div className="mt-8 border-t border-gray-100 pt-6 dark:border-gray-700">
                 <p className="font-heading font-bold text-secondary">
                   {TRUST_SIGNALS[active].theme}
                 </p>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                   Verified enterprise engagement outcomes
                 </p>
               </div>
@@ -57,7 +57,9 @@ export function Testimonials() {
                 key={i}
                 onClick={() => setActive(i)}
                 className={`h-2 rounded-full transition-all ${
-                  i === active ? "w-8 bg-primary" : "w-2 bg-gray-300"
+                  i === active
+                    ? "w-8 bg-primary"
+                    : "w-2 bg-gray-300 dark:bg-gray-600"
                 }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />

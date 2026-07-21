@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BRAND, NAV_ITEMS } from "../data/content";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface NavbarProps {
   activeSection: string;
@@ -26,7 +27,7 @@ export function Navbar({ activeSection }: NavbarProps) {
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-md"
+          ? "border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/90"
           : "bg-transparent"
       }`}
     >
@@ -46,7 +47,7 @@ export function Navbar({ activeSection }: NavbarProps) {
               className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                 activeSection === item.id
                   ? "bg-primary/10 text-primary"
-                  : "text-gray-600 hover:text-primary"
+                  : "text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-accent"
               }`}
             >
               {item.label}
@@ -54,20 +55,26 @@ export function Navbar({ activeSection }: NavbarProps) {
           ))}
         </div>
 
-        <button
-          onClick={() => scrollTo("contact")}
-          className="hidden rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90 lg:block"
-        >
-          Talk To Us
-        </button>
+        <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
+          <button
+            onClick={() => scrollTo("contact")}
+            className="rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
+          >
+            Talk To Us
+          </button>
+        </div>
 
-        <button
-          className="rounded-lg p-2 text-secondary lg:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            className="rounded-lg p-2 text-secondary"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -76,7 +83,7 @@ export function Navbar({ activeSection }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-t border-gray-100 bg-white lg:hidden"
+            className="overflow-hidden border-t border-gray-100 bg-white dark:border-gray-800 dark:bg-gray-900 lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {NAV_ITEMS.map((item) => (
@@ -86,7 +93,7 @@ export function Navbar({ activeSection }: NavbarProps) {
                   className={`rounded-lg px-4 py-3 text-left text-sm font-medium ${
                     activeSection === item.id
                       ? "bg-primary/10 text-primary"
-                      : "text-gray-700"
+                      : "text-gray-700 dark:text-gray-300"
                   }`}
                 >
                   {item.label}

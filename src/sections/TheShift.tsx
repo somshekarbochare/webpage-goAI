@@ -5,7 +5,7 @@ import { ScrollReveal } from "../components/ScrollReveal";
 
 export function TheShift() {
   return (
-    <section id="shift" className="relative px-6 py-28">
+    <section id="shift" className="section-padding relative">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <p className="text-sm font-semibold tracking-widest text-primary uppercase">
@@ -14,15 +14,15 @@ export function TheShift() {
           <h2 className="mt-4 font-heading text-4xl font-bold text-secondary md:text-5xl">
             Traditional software delivery is broken
           </h2>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-gray-600">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
             For three decades, enterprises outsourced software at scale through the
             Global Delivery Model. It worked — until AI changed everything.
           </p>
         </ScrollReveal>
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-2">
+        <div className="mt-12 grid gap-12 lg:grid-cols-2">
           <ScrollReveal animation="slide">
-            <div className="rounded-3xl border border-red-100 bg-red-50/50 p-8">
+            <div className="rounded-3xl border border-red-100 bg-red-50/50 p-8 dark:border-red-900/30 dark:bg-red-950/20">
               <div className="mb-6 flex items-center gap-3">
                 <AlertTriangle className="text-red-500" size={24} />
                 <h3 className="font-heading text-2xl font-bold text-secondary">
@@ -42,15 +42,15 @@ export function TheShift() {
                     <div
                       className={`flex items-center gap-4 rounded-xl px-5 py-4 ${
                         step === "Delays" || step === "Rework"
-                          ? "border border-red-200 bg-red-100/80"
-                          : "border border-gray-200 bg-white"
+                          ? "border border-red-200 bg-red-100/80 dark:border-red-800 dark:bg-red-900/30"
+                          : "border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
                       }`}
                     >
                       <span
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
                           step === "Delays" || step === "Rework"
                             ? "bg-red-500 text-white"
-                            : "bg-gray-100 text-gray-600"
+                            : "bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300"
                         }`}
                       >
                         {i + 1}
@@ -68,7 +68,7 @@ export function TheShift() {
                     </div>
                     {i < TRADITIONAL_FLOW.length - 1 && (
                       <div className="flex justify-center py-1">
-                        <div className="h-4 w-0.5 bg-gray-300" />
+                        <div className="h-4 w-0.5 bg-gray-300 dark:bg-gray-600" />
                       </div>
                     )}
                   </motion.div>
@@ -85,7 +85,7 @@ export function TheShift() {
                   years. We built what comes next.&rdquo;
                 </p>
               </blockquote>
-              <p className="mt-8 text-lg leading-relaxed text-gray-600">
+              <p className="mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                 Large offshore teams, linear handoffs, waterfall cadences — all
                 designed for a world before AI. Today, a small AI-augmented pod can
                 dramatically outperform teams many times its size.
@@ -99,9 +99,9 @@ export function TheShift() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-xl border border-gray-100 bg-white p-4"
+                    className="rounded-xl border border-gray-100 bg-white p-4 dark:border-gray-700 dark:bg-gray-800"
                   >
-                    <p className="text-xs font-semibold tracking-wide text-gray-500 uppercase">
+                    <p className="text-xs font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
                       {item.label}
                     </p>
                     <p className="mt-1 font-semibold text-secondary">{item.value}</p>

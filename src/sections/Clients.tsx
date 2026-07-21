@@ -6,15 +6,15 @@ function LogoWall() {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-24 bg-gradient-to-r from-white to-transparent" />
-      <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent" />
+      <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-24 bg-gradient-to-r from-gray-50 to-transparent dark:from-gray-900" />
+      <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-24 bg-gradient-to-l from-gray-50 to-transparent dark:from-gray-900" />
       <div className="animate-marquee flex w-max gap-6">
         {doubled.map((client, i) => (
           <div
             key={`${client.name}-${i}`}
             className="group relative w-64 shrink-0"
           >
-            <div className="flex h-28 items-center justify-center rounded-2xl border border-gray-200 bg-white px-6 transition hover:border-primary/30 hover:shadow-md">
+            <div className="flex h-28 items-center justify-center rounded-2xl border border-gray-200 bg-white px-6 transition hover:border-primary/30 hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
               <span className="text-center font-heading text-sm font-semibold text-secondary">
                 {client.name}
               </span>
@@ -35,7 +35,7 @@ function LogoWall() {
 
 export function Clients() {
   return (
-    <section id="clients" className="bg-gray-50 px-6 py-28">
+    <section id="clients" className="section-padding bg-surface">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <p className="text-center text-sm font-semibold tracking-widest text-primary uppercase">
@@ -44,12 +44,12 @@ export function Clients() {
           <h2 className="mt-4 text-center font-heading text-4xl font-bold text-secondary md:text-5xl">
             Trusted by enterprises worldwide
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-600">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-300">
             Hover to explore our client relationships across industries.
           </p>
         </ScrollReveal>
 
-        <div className="mt-16">
+        <div className="mt-12">
           <LogoWall />
         </div>
       </div>

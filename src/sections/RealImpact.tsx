@@ -4,7 +4,7 @@ import { ScrollReveal } from "../components/ScrollReveal";
 
 export function RealImpact() {
   return (
-    <section id="impact" className="bg-secondary px-6 py-28 text-white">
+    <section id="impact" className="section-padding bg-gray-900 text-white dark:bg-gray-950">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <p className="text-center text-sm font-semibold tracking-widest text-accent uppercase">
@@ -19,7 +19,7 @@ export function RealImpact() {
           </p>
         </ScrollReveal>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {IMPACT_METRICS.map((metric, i) => (
             <ScrollReveal key={metric.label} delay={i * 0.1} animation="scale">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">

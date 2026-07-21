@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-heading: "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -7,10 +9,33 @@
   --color-secondary: #111827;
   --color-accent: #38bdf8;
   --color-background: #ffffff;
+  --color-surface: #f9fafb;
+  --color-card: #ffffff;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+}
+
+.dark {
+  --color-background: #0a0f1a;
+  --color-surface: #111827;
+  --color-card: #1f2937;
+  --color-muted: #9ca3af;
+  --color-border: #374151;
+}
+
+.dark .text-secondary {
+  color: #f3f4f6;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+html,
+body {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 body {
@@ -34,6 +59,10 @@ h6 {
   background: color-mix(in srgb, var(--color-primary) 20%, white);
 }
 
+.dark ::selection {
+  background: color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -49,4 +78,15 @@ h6 {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+.section-padding {
+  padding-inline: 1.5rem;
+  padding-block: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-block: 5.5rem;
+  }
 }
