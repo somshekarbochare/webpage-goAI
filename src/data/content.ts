@@ -1,11 +1,13 @@
 export const BRAND = {
-  name: "goAI Solutions",
+  name: "goAI",
+  logoSrc: "/goai-logo.png",
+  logoAlt: "goAI",
   tagline: "The AI Pod Delivery Model",
   email: "hello@goai.solutions",
   enterpriseEmail: "enterprise@goai.solutions",
   linkedin: "https://www.linkedin.com/company/goai-solutions/",
   twitter: "https://x.com/goAISolutions",
-  locations: ["Tampa Metro, Florida", "Bengaluru", "São Paulo", "Australia"],
+  locations: ["Tampa Metro, Florida", "Bengaluru", "Australia"],
 } as const;
 
 export const NAV_ITEMS = [
@@ -24,21 +26,17 @@ export const NAV_ITEMS = [
   { id: "contact", label: "Contact" },
 ] as const;
 
-export const LOADING_STEPS = [
-  "Thinking...",
-  "Learning...",
-  "Planning...",
-  "Building...",
-  "Delivering...",
+export const APDM_WORKFLOW = [
+  "PLAN",
+  "ORCHESTRATE",
+  "EXECUTE",
+  "REVIEW",
+  "GOVERN",
+  "DEPLOY",
 ] as const;
 
-export const HERO_WORKFLOW = [
-  "Idea",
-  "Requirements",
-  "AI Pods",
-  "Human Review",
-  "Deployment",
-] as const;
+/** @deprecated Use APDM_WORKFLOW */
+export const HERO_WORKFLOW = APDM_WORKFLOW;
 
 export const TRADITIONAL_FLOW = [
   "Requirements",
@@ -83,7 +81,7 @@ export const PROBLEM_TOPICS = [
 ] as const;
 
 export const APDM_CHARACTERISTICS = [
-  { title: "AI Pods", description: "Small, AI-augmented teams with shared organizational context." },
+  { title: "AI Pods", description: "AI-augmented teams with shared organizational context." },
   { title: "Human Oversight", description: "Senior engineers provide judgment, creativity, and accountability." },
   { title: "Faster Delivery", description: "First deliverable in days — 3–5× faster than traditional models." },
   { title: "Shared Intelligence", description: "MCP connects AI to repos, data, and enterprise knowledge." },
@@ -99,13 +97,19 @@ export const COMPARISON_ROWS = [
   { traditional: "Reactive Planning", apdm: "Intelligent Planning" },
 ] as const;
 
-export const IMPACT_METRICS = [
+export const IMPACT_METRICS: {
+  label: string;
+  value: number;
+  suffix: string;
+  prefix?: string;
+  format?: "compact";
+}[] = [
+  { label: "Projects Delivered", value: 6, suffix: "+" },
   { label: "Enterprise Engagements", value: 6, suffix: "+" },
   { label: "Countries Served", value: 4, suffix: "" },
-  { label: "Team Size Reduction", value: 80, suffix: "%", prefix: "up to " },
-  { label: "Faster Delivery", value: 5, suffix: "×", prefix: "3–" },
-  { label: "AI-Augmented Delivery", value: 100, suffix: "%" },
-] as const;
+  { label: "Automation Hours Saved", value: 50000, suffix: "+", format: "compact" },
+  { label: "AI Agents", value: 250, suffix: "+" },
+];
 
 export const CLIENTS = [
   { name: "Lewis Tree Services", industry: "Utilities", relationship: "Enterprise client" },
@@ -153,7 +157,7 @@ export const PROJECTS = [
     industry: "Enterprise IT",
     challenge: "Monolithic systems blocking agility — MySQL to distributed platforms, mainframe decomposition.",
     solution: "Incremental modernization strategies keeping production running while transforming underneath.",
-    outcome: "Re-architected enterprise systems with dramatically reduced team sizes.",
+    outcome: "Re-architected enterprise systems with dramatically improved delivery velocity.",
     technologies: ["HBase", "API Gateway", "Event-Driven", "AI Migration"],
   },
   {
@@ -181,13 +185,15 @@ export const FOUNDERS = [
     biography:
       "Veteran technology leader with 25+ years of experience building and scaling enterprise software businesses. Passionate about helping organizations transform through AI-first engineering and execution.",
     initials: "DB",
+    linkedin: "https://www.linkedin.com/in/deepaknbelavadi/",
   },
   {
-    name: "Deepak I",
+    name: "Deepak Swamy",
     role: "CEO",
     biography:
       "Entrepreneur and business leader driving goAI's vision of AI-native software delivery, enabling enterprises to build, scale, and innovate faster.",
     initials: "DS",
+    linkedin: "https://www.linkedin.com/in/deepakisherenow/",
   },
   {
     name: "Parth Verma",
@@ -195,6 +201,7 @@ export const FOUNDERS = [
     biography:
       "AI architect focused on designing enterprise-grade AI solutions, modern architectures, and intelligent systems that deliver measurable business outcomes.",
     initials: "PV",
+    linkedin: "https://www.linkedin.com/in/askparth/",
   },
   {
     name: "Vivian D'Souza",
@@ -202,7 +209,7 @@ export const FOUNDERS = [
     biography:
       "Platform engineering and DevOps leader with expertise in building secure, scalable, and cloud-native systems for enterprise applications.",
     initials: "VD",
-    linkedin: "https://in.linkedin.com/in/viv-dsouza",
+    linkedin: "https://www.linkedin.com/in/viv-dsouza/",
   },
   {
     name: "Sree Harshavardhana",
@@ -210,6 +217,7 @@ export const FOUNDERS = [
     biography:
       "Software delivery leader experienced in managing high-performing engineering teams and delivering complex enterprise programs with speed and quality.",
     initials: "SH",
+    linkedin: "https://www.linkedin.com/in/sreeharshavardhana",
   },
 ] as const;
 
@@ -228,7 +236,7 @@ export const ORIGIN_TIMELINE = [
   },
   {
     title: "First AI Pod",
-    description: "4–6 person pods with shared AI context delivering enterprise-grade outcomes in production.",
+    description: "AI-augmented pods with shared context delivering enterprise-grade outcomes in production.",
   },
   {
     title: "goAI Founded",
@@ -236,7 +244,7 @@ export const ORIGIN_TIMELINE = [
   },
   {
     title: "APDM Created",
-    description: "The AI Pod Delivery Model formalized — small pods, AI-native, compounding velocity.",
+    description: "The AI Pod Delivery Model formalized — AI-native pods with compounding velocity.",
   },
   {
     title: "Future Vision",
@@ -271,8 +279,8 @@ export const BLOG_CATEGORIES = [
   },
   {
     category: "Product Development",
-    title: "Small Pods, Big Impact",
-    excerpt: "Why 4–6 senior engineers with AI context outperform teams ten times their size — and how we prove it in production.",
+    title: "Pods, Big Impact",
+    excerpt: "Why AI-augmented pods with shared context outperform traditional delivery — and how we prove it in production.",
     date: "2026",
   },
 ] as const;
@@ -291,6 +299,6 @@ export const TRUST_SIGNALS = [
   {
     theme: "Measurable Outcomes",
     feedback:
-      "Up to 80% reduction in team size for comparable output. Days to first deliverable vs. months in traditional GDM.",
+      "Outcome scaling through AI-augmented pods. Days to first deliverable vs. months in traditional GDM.",
   },
 ] as const;

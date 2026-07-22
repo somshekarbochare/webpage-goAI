@@ -23,9 +23,9 @@ export function Founders() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {FOUNDERS.map((leader, i) => (
             <ScrollReveal key={leader.name} delay={i * 0.07} animation="scale">
-              <div className="group flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:border-primary/40">
+              <div className="group flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:border-accent/40">
                 <div className="mb-5 flex items-center gap-4">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/70 font-heading text-lg font-bold text-white shadow-md transition group-hover:scale-105">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 font-heading text-lg font-bold text-white shadow-md ring-2 ring-accent/20 transition group-hover:scale-105">
                     {leader.initials}
                   </div>
                   <div>
@@ -38,18 +38,17 @@ export function Founders() {
                 <p className="flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                   {leader.biography}
                 </p>
-                {"linkedin" in leader && leader.linkedin && (
-                  <a
-                    href={leader.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80"
-                  >
-                    <LinkedInIcon size={16} />
-                    Connect on LinkedIn
-                    <ExternalLink size={12} />
-                  </a>
-                )}
+                <a
+                  href={leader.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent"
+                  aria-label={`Connect with ${leader.name} on LinkedIn`}
+                >
+                  <LinkedInIcon size={16} />
+                  Connect on LinkedIn
+                  <ExternalLink size={12} />
+                </a>
               </div>
             </ScrollReveal>
           ))}

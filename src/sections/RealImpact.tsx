@@ -22,12 +22,13 @@ export function RealImpact() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {IMPACT_METRICS.map((metric, i) => (
             <ScrollReveal key={metric.label} delay={i * 0.1} animation="scale">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition hover:border-accent/30">
                 <p className="font-heading text-4xl font-bold text-accent md:text-5xl">
                   <AnimatedCounter
                     value={metric.value}
-                    prefix={"prefix" in metric ? metric.prefix : ""}
+                    prefix={metric.prefix ?? ""}
                     suffix={metric.suffix}
+                    format={metric.format ?? "default"}
                   />
                 </p>
                 <p className="mt-3 text-sm font-medium tracking-wide text-gray-400 uppercase">

@@ -70,9 +70,8 @@ export function IntroducingAPDM() {
                   What APDM is
                 </h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  A delivery methodology where small pods of 4–6 senior engineers
-                  work with AI that understands your codebase, architecture, and
-                  business rules.
+                  A delivery methodology where AI-augmented pods work with AI that
+                  understands your codebase, architecture, and business rules.
                 </p>
               </div>
               <div>
@@ -107,7 +106,7 @@ export function IntroducingAPDM() {
         <div className="mt-14">
           <ScrollReveal>
             <h3 className="text-center font-heading text-3xl font-bold text-secondary md:text-4xl">
-              Why APDM works
+              How APDM works
             </h3>
             <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600 dark:text-gray-300">
               Six pillars that make AI-native delivery measurable, repeatable, and
@@ -152,8 +151,9 @@ export function IntroducingAPDM() {
                   <p className="font-heading text-4xl font-bold text-primary md:text-5xl">
                     <AnimatedCounter
                       value={metric.value}
-                      prefix={"prefix" in metric ? metric.prefix : ""}
+                      prefix={metric.prefix ?? ""}
                       suffix={metric.suffix}
+                      format={metric.format ?? "default"}
                     />
                   </p>
                   <p className="mt-3 text-sm font-medium tracking-wide text-gray-500 uppercase dark:text-gray-400">
@@ -172,8 +172,8 @@ export function IntroducingAPDM() {
               Ready to transform your delivery model?
             </h3>
             <p className="mx-auto mt-4 max-w-xl text-gray-300">
-              Discover how APDM can reduce team size, accelerate delivery, and
-              compound intelligence across your organization.
+              Discover how APDM can accelerate delivery and compound intelligence
+              across your organization.
             </p>
             <button
               onClick={() => scrollTo("contact")}

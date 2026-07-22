@@ -6,6 +6,15 @@ interface AnimatedCounterProps {
   prefix?: string;
   suffix?: string;
   duration?: number;
+  format?: "default" | "compact";
+}
+
+function formatValue(value: number, format: "default" | "compact") {
+  if (format === "compact" && value >= 1000) {
+    const rounded = Math.round(value / 1000);
+    return `${rounded}K`;
+  }
+  return Math.round(value).toLocaleString();
 }
 
 export function AnimatedCounter({
@@ -13,6 +22,7 @@ export function AnimatedCounter({
   prefix = "",
   suffix = "",
   duration = 2,
+  format = "default",
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
@@ -20,7 +30,7 @@ export function AnimatedCounter({
 
   const spring = useSpring(0, { duration: duration * 1000, bounce: 0 });
   const display = useTransform(spring, (current) =>
-    Math.round(current).toLocaleString(),
+    formatValue(current, format),
   );
 
   useEffect(() => {

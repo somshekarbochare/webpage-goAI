@@ -9,6 +9,9 @@ interface Node {
   radius: number;
 }
 
+const BRAND_BLUE = "54, 95, 154";
+const BRAND_GOLD = "247, 209, 7";
+
 export function AINetworkBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { theme } = useTheme();
@@ -57,8 +60,8 @@ export function AINetworkBackground() {
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
         ctx.fillStyle = isDark
-          ? "rgba(56, 189, 248, 0.35)"
-          : "rgba(10, 102, 194, 0.38)";
+          ? `rgba(${BRAND_GOLD}, 0.32)`
+          : `rgba(${BRAND_BLUE}, 0.38)`;
         ctx.fill();
       }
 
@@ -69,13 +72,11 @@ export function AINetworkBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < connectionDistance) {
-            const opacity = (1 - dist / connectionDistance) * (isDark ? 0.28 : 0.24);
+            const opacity = (1 - dist / connectionDistance) * (isDark ? 0.26 : 0.22);
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = isDark
-              ? `rgba(56, 189, 248, ${opacity})`
-              : `rgba(56, 189, 248, ${opacity})`;
+            ctx.strokeStyle = `rgba(${BRAND_GOLD}, ${opacity})`;
             ctx.lineWidth = 1.1;
             ctx.stroke();
           }

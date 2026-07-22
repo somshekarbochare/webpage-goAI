@@ -31,12 +31,21 @@ export function Navbar({ activeSection }: NavbarProps) {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <button
           onClick={() => scrollTo("landing")}
-          className="font-heading text-xl font-bold text-secondary"
+          className="flex shrink-0 items-center"
+          aria-label={`${BRAND.logoAlt} — Home`}
         >
-          {BRAND.name}
+          <img
+            src={BRAND.logoSrc}
+            alt={BRAND.logoAlt}
+            width={140}
+            height={40}
+            className="h-8 w-auto md:h-9"
+            loading="eager"
+            decoding="async"
+          />
         </button>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -59,7 +68,7 @@ export function Navbar({ activeSection }: NavbarProps) {
           <ThemeToggle />
           <button
             onClick={() => scrollTo("contact")}
-            className="rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
+            className="rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90 hover:shadow-md hover:shadow-primary/20"
           >
             Talk To Us
           </button>

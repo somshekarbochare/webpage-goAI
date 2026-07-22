@@ -33,7 +33,7 @@ export function TheProblem() {
             Most companies are asking: &ldquo;Can AI replace developers?&rdquo;
             <br />
             <span className="font-semibold text-white">
-              goAI asks: &ldquo;How can AI make every developer extraordinary?&rdquo;
+              goAI asks: &ldquo;How can AI make teams extraordinary?&rdquo;
             </span>
           </p>
         </ScrollReveal>
