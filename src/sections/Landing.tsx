@@ -19,7 +19,7 @@ export function Landing() {
     >
       <div className="relative z-10 mx-auto max-w-5xl text-center">
         <ScrollReveal animation="scale">
-          <p className="mb-6 text-sm font-semibold tracking-widest text-primary uppercase">
+          <p className="mb-6 font-heading text-sm font-semibold tracking-widest text-primary uppercase">
             The AI Pod Delivery Model
           </p>
         </ScrollReveal>
@@ -30,7 +30,8 @@ export function Landing() {
               key={line}
               className="block"
               initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-80px" }}
               transition={{ duration: 0.7, delay: 0.15 + i * 0.2, ease: "easeOut" }}
             >
               {i === 1 ? (
@@ -43,7 +44,7 @@ export function Landing() {
         </h1>
 
         <ScrollReveal delay={0.5}>
-          <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-gray-600 dark:text-gray-300">
+          <p className="mx-auto mt-8 max-w-2xl font-heading text-xl leading-relaxed text-gray-600 dark:text-gray-300">
             Powered by Human + AI Collaboration
           </p>
         </ScrollReveal>

@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
-import { APDM_WORKFLOW, BRAND } from "../data/content";
+import { APDM_WORKFLOW } from "../data/content";
+import { GoAILogo } from "./GoAILogo";
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -37,14 +38,9 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.img
-            src={BRAND.logoSrc}
-            alt={BRAND.logoAlt}
-            className="mb-10 h-10 w-auto md:h-12"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          />
+          <div className="mb-10">
+            <GoAILogo className="h-11 w-auto shrink-0 md:h-12" />
+          </div>
 
           <motion.p
             className="mb-8 text-center text-sm font-medium tracking-widest text-white/60 uppercase"

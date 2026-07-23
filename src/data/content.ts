@@ -1,7 +1,7 @@
 export const BRAND = {
   name: "goAI",
-  logoSrc: "/goai-logo.png",
-  logoAlt: "goAI",
+  logoSrc: "/goai-logo.svg",
+  logoAlt: "goAI Solutions Logo",
   tagline: "The AI Pod Delivery Model",
   email: "hello@goai.solutions",
   enterpriseEmail: "enterprise@goai.solutions",
@@ -10,7 +10,7 @@ export const BRAND = {
   locations: ["Tampa Metro, Florida", "Bengaluru", "Australia"],
 } as const;
 
-export const NAV_ITEMS = [
+export const NAV_JOURNEY_ITEMS = [
   { id: "landing", label: "Home" },
   { id: "shift", label: "The Shift" },
   { id: "problem", label: "The Problem" },
@@ -18,11 +18,24 @@ export const NAV_ITEMS = [
   { id: "human-ai", label: "Human + AI" },
   { id: "different", label: "How We're Different" },
   { id: "impact", label: "Real Impact" },
+] as const;
+
+export const NAV_EXPLORE_ITEMS = [
   { id: "projects", label: "Projects" },
   { id: "clients", label: "Clients" },
-  { id: "founders", label: "Founders" },
+  { id: "founders", label: "Leadership" },
   { id: "origin", label: "Our Story" },
   { id: "blogs", label: "Blogs" },
+] as const;
+
+export const NAV_DROPDOWNS = [
+  { label: "The Journey", items: NAV_JOURNEY_ITEMS },
+  { label: "Explore", items: NAV_EXPLORE_ITEMS },
+] as const;
+
+export const NAV_ITEMS = [
+  ...NAV_JOURNEY_ITEMS,
+  ...NAV_EXPLORE_ITEMS,
   { id: "contact", label: "Contact" },
 ] as const;
 
@@ -184,7 +197,7 @@ export const FOUNDERS = [
     role: "CESO",
     biography:
       "Veteran technology leader with 25+ years of experience building and scaling enterprise software businesses. Passionate about helping organizations transform through AI-first engineering and execution.",
-    initials: "DB",
+    image: "/leadership/deepak-n-belavadi.webp",
     linkedin: "https://www.linkedin.com/in/deepaknbelavadi/",
   },
   {
@@ -192,7 +205,7 @@ export const FOUNDERS = [
     role: "CEO",
     biography:
       "Entrepreneur and business leader driving goAI's vision of AI-native software delivery, enabling enterprises to build, scale, and innovate faster.",
-    initials: "DS",
+    image: "/leadership/deepak-swamy.webp",
     linkedin: "https://www.linkedin.com/in/deepakisherenow/",
   },
   {
@@ -200,7 +213,7 @@ export const FOUNDERS = [
     role: "VP, AI Architecture & Innovation",
     biography:
       "AI architect focused on designing enterprise-grade AI solutions, modern architectures, and intelligent systems that deliver measurable business outcomes.",
-    initials: "PV",
+    image: "/leadership/parth-verma.webp",
     linkedin: "https://www.linkedin.com/in/askparth/",
   },
   {
@@ -208,7 +221,7 @@ export const FOUNDERS = [
     role: "AVP, Platform Engineering & DevOps",
     biography:
       "Platform engineering and DevOps leader with expertise in building secure, scalable, and cloud-native systems for enterprise applications.",
-    initials: "VD",
+    image: "/leadership/vivian-dsouza.webp",
     linkedin: "https://www.linkedin.com/in/viv-dsouza/",
   },
   {
@@ -216,7 +229,7 @@ export const FOUNDERS = [
     role: "AVP, Software Delivery",
     biography:
       "Software delivery leader experienced in managing high-performing engineering teams and delivering complex enterprise programs with speed and quality.",
-    initials: "SH",
+    image: "/leadership/sree-harshavardhana.webp",
     linkedin: "https://www.linkedin.com/in/sreeharshavardhana",
   },
 ] as const;

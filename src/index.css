@@ -2,8 +2,16 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: "Mufflu";
+  src: url("/fonts/mufflu.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-heading: "Mufflu", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --color-primary: #365f9a;
   --color-secondary: #111827;
@@ -53,7 +61,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+header nav,
+header nav button,
+button {
   font-family: var(--font-heading);
 }
 

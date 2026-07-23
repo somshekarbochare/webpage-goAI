@@ -19,7 +19,7 @@ export function APDMWorkflow() {
                 className="rounded-2xl border border-primary/25 bg-white px-4 py-3 shadow-sm dark:border-primary/35 dark:bg-gray-800"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: 0.1 + i * 0.1 }}
                 whileHover={{ scale: 1.05, borderColor: "rgba(247,209,7,0.6)" }}
               >
@@ -48,7 +48,7 @@ export function APDMWorkflow() {
                 className="rounded-2xl border border-primary/25 bg-white px-6 py-3 shadow-sm dark:border-primary/35 dark:bg-gray-800"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: 0.1 + i * 0.1 }}
               >
                 <span className="font-heading text-sm font-bold tracking-wide text-primary">

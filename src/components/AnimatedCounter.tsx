@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
 
 interface AnimatedCounterProps {
@@ -25,8 +25,7 @@ export function AnimatedCounter({
   format = "default",
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const isInView = useInView(ref, { once: false, margin: "-60px" });
 
   const spring = useSpring(0, { duration: duration * 1000, bounce: 0 });
   const display = useTransform(spring, (current) =>
@@ -34,11 +33,12 @@ export function AnimatedCounter({
   );
 
   useEffect(() => {
-    if (isInView && !hasAnimated) {
+    if (isInView) {
       spring.set(value);
-      setHasAnimated(true);
+    } else {
+      spring.set(0);
     }
-  }, [isInView, hasAnimated, spring, value]);
+  }, [isInView, spring, value]);
 
   return (
     <span ref={ref} className="tabular-nums">
