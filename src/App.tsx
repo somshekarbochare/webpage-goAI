@@ -29,6 +29,10 @@ function App() {
 
   const handleLoadingComplete = useCallback(() => setLoading(false), []);
 
+  const scrollTo = useCallback((id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
 
@@ -80,7 +84,7 @@ function App() {
           <Blogs />
           <Contact />
         </main>
-        <Footer />
+        <Footer activeSection={activeSection} onNavigate={scrollTo} />
         <BackToTop visible={showBackToTop} />
       </div>
     </>

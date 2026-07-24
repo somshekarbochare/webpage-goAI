@@ -63,34 +63,47 @@ export const TRADITIONAL_FLOW = [
 export const PROBLEM_TOPICS = [
   {
     title: "Large Teams",
-    description: "20–30 person teams where coordination overhead scales with headcount.",
+    description:
+      "Large delivery teams create communication overhead, slower decision-making, and increased coordination effort.",
     icon: "users",
   },
   {
-    title: "Slow Delivery",
-    description: "Months of ramp-up before the first deliverable reaches production.",
-    icon: "clock",
-  },
-  {
-    title: "Manual Processes",
-    description: "Repetitive engineering work inflates team size without adding judgment.",
-    icon: "settings",
-  },
-  {
     title: "Knowledge Silos",
-    description: "Context trapped in individuals instead of shared across the organization.",
+    description:
+      "Critical knowledge becomes isolated within individuals or departments, creating risk and slowing execution.",
     icon: "layers",
   },
   {
-    title: "High Costs",
-    description: "Delivery economics designed for a pre-AI world — more people, more output.",
-    icon: "trending-up",
+    title: "Manual Processes",
+    description:
+      "Repeated manual activities reduce efficiency and limit scalability.",
+    icon: "settings",
   },
   {
     title: "Communication Overhead",
-    description: "Linear handoffs and meetings consume time that should go to building.",
+    description:
+      "More stakeholders often lead to more meetings, approvals, and delivery delays.",
     icon: "message-square",
   },
+  {
+    title: "Slow Delivery",
+    description:
+      "Traditional workflows introduce bottlenecks that extend release cycles.",
+    icon: "clock",
+  },
+  {
+    title: "High Costs",
+    description:
+      "Complex delivery structures increase operational and delivery expenses.",
+    icon: "trending-up",
+  },
+] as const;
+
+export const FOOTER_SITEMAP_LINKS = [
+  ...NAV_JOURNEY_ITEMS,
+  ...NAV_EXPLORE_ITEMS,
+  { id: "contact", label: "Contact" },
+  { id: "contact", label: "Talk To Us" },
 ] as const;
 
 export const APDM_CHARACTERISTICS = [
